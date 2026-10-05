@@ -1,74 +1,59 @@
-# ROMULAS Portfolio — Complete Combined Package V1
+# ROMULAS Portfolio — Complete Package V2
 
-This ZIP is already arranged for your existing GitHub Pages repository.
+This package is arranged to replace the current contents of the GitHub Pages repository.
 
 ## Included
-- Home page
+- Home
 - Digital Solutions
 - Custom Systems & PWA
 - Website Development
+- Automation & Integration
+- Digital Marketing
 
-## Final repository structure
+## Standardized top navigation on all included pages
+- Home
+- Digital Solutions
+- Muay Thai
+- Portfolio
+- About
+- Let's Build
 
+The visual style of the navigation is allowed to change per page, but the labels and order are standardized.
+
+Until the dedicated Muay Thai / Portfolio / About pages are built, those links return to the relevant sections on the Home page so they do not cause a 404.
+
+## WhatsApp
+All project/contact CTAs use +65 8170 5022.
+Buttons prefill the page and feature/service that the visitor is interested in.
+
+## GitHub structure
 portfolio/
 ├── index.html
 ├── styles.css
 ├── script.js
-├── .nojekyll
 ├── images/
-│   ├── romulas-professional.png
-│   └── romulas-muaythai.png
 ├── digital-solutions/
-│   ├── index.html
-│   ├── styles.css
-│   ├── main.js
-│   └── assets/
 ├── systems/
-│   ├── index.html
-│   ├── styles.css
-│   ├── main.js
-│   └── assets/
-└── websites/
-    ├── index.html
-    ├── styles.css
-    ├── main.js
-    └── assets/
+├── websites/
+├── automation/
+└── marketing/
 
-## Live URLs
-Home:
-https://romulasoh.github.io/portfolio/
+Upload EVERYTHING INSIDE `romulas-portfolio-complete-v2` to the ROOT of the repository.
 
-Digital Solutions:
-https://romulasoh.github.io/portfolio/digital-solutions/
+GitHub Pages:
+- branch: main
+- folder: /(root)
 
-Custom Systems & PWA:
-https://romulasoh.github.io/portfolio/systems/
-
-Website Development:
-https://romulasoh.github.io/portfolio/websites/
-
-## WhatsApp
-All contact/project CTAs in this combined package use:
-+65 8170 5022
-
-Messages identify the page/service the visitor came from.
-
-## Clean replacement instructions
-1. Keep the GitHub repository itself and GitHub Pages setting.
-2. Delete the existing website files/folders in the repository.
-3. Extract this ZIP.
-4. Open the `romulas-portfolio-complete-v1` folder.
-5. Upload EVERYTHING INSIDE that folder to the ROOT of the `portfolio` repository.
-6. Do NOT upload the outer folder as another nested folder.
-
-GitHub Pages should remain:
-- Branch: main
-- Folder: /(root)
+## Live routes
+/
+digital-solutions/
+systems/
+websites/
+automation/
+marketing/
 
 ## Still pending
-- Automation & Integration
-- Digital Marketing
-- Muay Thai & Boxing
-- Portfolio / Case Studies
-- About
-- Contact page (for now contact buttons go directly to WhatsApp)
+- Muay Thai & Boxing page
+- Portfolio / Case Studies page
+- About page
+- Optional dedicated Contact page (WhatsApp contact is already live everywhere)
