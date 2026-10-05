@@ -46,3 +46,6 @@ Messages are prefilled according to page/service.
 - Portfolio / Case Studies
 - About
 - Optional dedicated Contact page
+
+
+V4: Systems and Marketing are now full long-form pages. Marketing includes E-Name Card service.

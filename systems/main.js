@@ -10,4 +10,6 @@
   document.querySelectorAll('#menu a,#site-nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
   addEventListener('resize',()=>{if(innerWidth>=901)setMenu(false)},{passive:true});
+}
+  const rs=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});rs.forEach(x=>io.observe(x))}else rs.forEach(x=>x.classList.add('visible'));
 })();
