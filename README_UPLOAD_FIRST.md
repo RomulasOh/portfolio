@@ -48,4 +48,11 @@ Messages are prefilled according to page/service.
 - Optional dedicated Contact page
 
 
-V4: Systems and Marketing are now full long-form pages. Marketing includes E-Name Card service.
+Additional page folder:
+- muaythai
+
+
+## V6
+- Added `/muay-thai/` as the final Muay Thai route.
+- Cyberpunk pink/blue/red design.
+- No face photography; uses a custom anonymous vector fighter.
