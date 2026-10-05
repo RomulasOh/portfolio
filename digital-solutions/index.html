@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="ROMULAS Digital Solutions — custom systems, websites, automation and digital marketing built around real business workflows." />
+  <title>ROMULAS — Digital Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <div class="page">
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo-button" href="../" aria-label="ROMULAS Home"><img src="./assets/logo.webp" alt="" width="52" height="52" /></a>
+        <nav class="nav-pill desktop-nav" aria-label="Primary navigation">
+          <a href="../">Home</a>
+          <a class="active" href="./">Solutions</a>
+          <a href="../muay-thai/">Muay Thai</a>
+          <a href="../work/">Work</a>
+          <a href="../about/">About</a>
+          <a href="../contact/">Contact</a>
+        </nav>
+        <a class="talk-pill desktop-talk" href="../contact/">Let's Talk</a>
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="hero-inner">
+        <div class="trust-row anim" style="--d:.05s">
+          <div class="avatar-stack" aria-hidden="true">
+            <span class="trust-avatar a1"><span><i class="fa-solid fa-code"></i></span></span>
+            <span class="trust-avatar a2"><span><i class="fa-solid fa-layer-group"></i></span></span>
+            <span class="trust-avatar a3"><span><i class="fa-solid fa-bolt"></i></span></span>
+          </div>
+          <div class="trust-pill">Built for real business workflows</div>
+        </div>
+
+        <h1 class="headline anim" aria-label="Digital Solutions Built Around Business">
+          <span>Digital Solutions</span>
+          <span>Built Around Business</span>
+        </h1>
+
+        <p class="subhead anim" style="--d:.28s">From high-converting websites and custom PWAs to workflow automation and digital marketing, I build practical solutions around how your business actually works.</p>
+        <a class="hero-cta anim" style="--d:.4s" href="#services">Explore Solutions</a>
+      </div>
+    </main>
+
+    <section class="stats" id="services" aria-label="Digital solution categories">
+      <a class="stat anim" style="--d:.5s" href="../systems/"><div class="stat-icon">&lt;</div><div class="stat-value" data-target="1">00</div><div class="stat-label">Custom Systems &amp; PWA</div></a>
+      <a class="stat anim" style="--d:.58s" href="../websites/"><div class="stat-icon">%</div><div class="stat-value" data-target="2">00</div><div class="stat-label">Website Development</div></a>
+      <a class="stat anim" style="--d:.66s" href="../automation/"><div class="stat-icon">*</div><div class="stat-value" data-target="3">00</div><div class="stat-label">Automation &amp; Integration</div></a>
+      <a class="stat anim" style="--d:.74s" href="../marketing/"><div class="stat-icon">#</div><div class="stat-value" data-target="4">00</div><div class="stat-label">Digital Marketing</div></a>
+    </section>
+  </div>
+
+  <div class="mobile-overlay" hidden></div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile navigation">
+      <a href="../">Home</a><a class="active" href="./">Solutions</a><a href="../muay-thai/">Muay Thai</a><a href="../work/">Work</a><a href="../about/">About</a><a href="../contact/">Contact</a><a class="mobile-talk" href="../contact/">Let's Talk</a>
+    </nav>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
