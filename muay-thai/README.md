@@ -1,20 +1,13 @@
-# ROMULAS Muay Thai & Boxing
+# ROMULAS Muay Thai & Boxing — V2
 
 Route:
 `/muay-thai/`
 
-Design:
-- no face photo
-- cyberpunk pink / blue / red
-- anonymous faceless SVG fighter
-- full long-form service page
-- WhatsApp CTAs to +65 8170 5022
-
-Pricing:
-- 1 Class Trial — $50
-- 1 Class — $120
-- 10 Classes Pack — $950
-- 20 Classes Pack — $1800
-
-Note:
-Prices may differ based on location held for PT.
+V2 changes:
+- Hero redesigned to follow the supplied reference: full-screen cyberpunk fight-stage composition.
+- Anonymous/faceless fighters only — no face/photo required.
+- Heavy pink / blue / red neon styling.
+- Standard portfolio navigation retained.
+- Fixed mobile floating-menu bug: hidden menu now uses `display:none !important`,
+  is fixed-positioned only when open, and does not take page spacing.
+- Existing long-form content and pricing retained.
