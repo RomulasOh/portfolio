@@ -56,3 +56,10 @@ Additional page folder:
 - Added `/muay-thai/` as the final Muay Thai route.
 - Cyberpunk pink/blue/red design.
 - No face photography; uses a custom anonymous vector fighter.
+
+
+## V9 changes
+- Corrected Muay Thai wording to match the actual training offer.
+- Removed the meaningless anonymous/pixel face panel and replaced it with a real training-photo panel using the supplied Muay Thai image.
+- Added `/about/` using the uploaded grid/node design idea, adapted to ROMULAS.
+- Updated About navigation links to `/about/`.
