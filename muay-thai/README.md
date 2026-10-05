@@ -1,13 +1,11 @@
-# ROMULAS Muay Thai & Boxing — V2
+# ROMULAS Muay Thai & Boxing — V3
 
-Route:
-`/muay-thai/`
+Hero rebuilt using the supplied real Muay Thai image as the full background.
 
-V2 changes:
-- Hero redesigned to follow the supplied reference: full-screen cyberpunk fight-stage composition.
-- Anonymous/faceless fighters only — no face/photo required.
-- Heavy pink / blue / red neon styling.
-- Standard portfolio navigation retained.
-- Fixed mobile floating-menu bug: hidden menu now uses `display:none !important`,
-  is fixed-positioned only when open, and does not take page spacing.
-- Existing long-form content and pricing retained.
+Changes:
+- Removed generated / illustrated fighters from the hero.
+- Uses `assets/muay-thai-hero-user.png`.
+- Image is intentionally toned down with CSS: lower brightness, saturation and contrast so it is less glossy.
+- Layout follows the supplied reference more closely: large left title, pink BOXING, real fighters on right, HUD details, bottom stats.
+- Mobile floating menu remains fixed and hidden with `display:none !important` when closed, so it takes no layout space.
+- All long-form training content and pricing remain below the hero.
