@@ -506,3 +506,135 @@ footer{padding:24px 0;border-top:1px solid var(--line);background:#050509}.foote
   .rate-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
   .rate-discover{font-size:18px}
 }
+
+
+/* ============================================================
+   V21 — FIXED PRICING CONTROLS + LARGER PACKAGE TABS
+   ============================================================ */
+
+/* Keep left content on a stable internal grid so arrows/CTA never move
+   when title/description wraps onto a different number of lines. */
+.rate-lab-copy{
+  min-height:520px;
+  display:grid;
+  grid-template-rows:
+    auto            /* eyebrow */
+    minmax(118px,auto) /* title */
+    auto            /* price */
+    86px            /* description */
+    64px            /* arrows */
+    36px;           /* CTA */
+  align-content:center;
+  row-gap:0;
+}
+
+/* Stable title / description zones */
+.rate-lab-copy .eyebrow{align-self:end}
+.rate-lab-copy h2{
+  align-self:end;
+  min-height:118px;
+  display:flex;
+  align-items:flex-end;
+}
+.rate-lab-price{align-self:start}
+.rate-lab-desc{
+  min-height:86px;
+  margin-top:15px;
+  display:flex;
+  align-items:flex-start;
+}
+
+/* Fix arrows at the same vertical position for all 4 packages */
+.rate-lab-actions{
+  margin-top:0;
+  align-self:center;
+  height:64px;
+  display:flex;
+  align-items:center;
+}
+
+/* Fix booking CTA directly under the arrows */
+.rate-lab-book{
+  margin-top:0;
+  align-self:start;
+}
+
+/* Make the bottom package selector much easier to read */
+.rate-tabs{
+  gap:34px;
+}
+.rate-tab{
+  font-size:12px;
+  letter-spacing:.08em;
+  padding:10px 0 9px;
+  font-weight:700;
+}
+.rate-tab span{
+  font-size:10px;
+  margin-right:8px;
+}
+.rate-tab.active{
+  border-bottom-width:2px;
+}
+
+/* Give the package selector a little more visual presence */
+.rate-lab-footer{
+  padding-top:12px;
+}
+.rate-tabs::before{
+  content:"CHOOSE PACKAGE";
+  font:700 9px var(--tech);
+  letter-spacing:.18em;
+  color:#687086;
+  margin-right:4px;
+}
+
+/* Tablet */
+@media(max-width:1050px){
+  .rate-lab-copy{
+    min-height:500px;
+    grid-template-rows:auto minmax(108px,auto) auto 82px 64px 36px;
+  }
+  .rate-tab{font-size:11px}
+  .rate-tab span{font-size:9px}
+  .rate-tabs{gap:24px}
+}
+
+/* Mobile: keep controls stable, but allow content to stack naturally */
+@media(max-width:760px){
+  .rate-lab-copy{
+    min-height:0;
+    display:grid;
+    grid-template-rows:auto auto auto 78px 62px 34px;
+  }
+  .rate-lab-copy h2{
+    min-height:0;
+    align-items:flex-start;
+  }
+  .rate-lab-desc{
+    min-height:78px;
+  }
+  .rate-tabs{
+    gap:12px 20px;
+  }
+  .rate-tabs::before{
+    grid-column:1/-1;
+    margin-bottom:2px;
+  }
+  .rate-tab{
+    font-size:10px;
+    padding:9px 0 8px;
+  }
+  .rate-tab span{font-size:9px}
+}
+
+/* Small mobile */
+@media(max-width:480px){
+  .rate-tab{
+    font-size:10px;
+  }
+  .rate-tab span{
+    font-size:9px;
+    margin-right:6px;
+  }
+}

@@ -55,3 +55,11 @@ Interaction:
 - Cyberpunk pink/blue glow shifts per package
 - Mobile swipe support
 - Keyboard left/right support
+
+
+## V21 — pricing carousel layout refinement
+- Fixed the arrow controls to one stable vertical position.
+- Fixed the booking CTA directly below the arrows.
+- Reserved consistent title/description heights so different wording lengths do not move the controls.
+- Increased the bottom package tab text size (`01 Trial`, `02 1 Class`, etc.).
+- Added a small `CHOOSE PACKAGE` label for clarity.
