@@ -44,3 +44,18 @@ The page already includes a designed fallback background, so it works even befor
 - Improved below-the-fold scroll reveals and project hover motion.
 - Added reduced-motion support for accessibility.
 - Kept the existing static HTML/CSS/JS architecture; no React build step is required.
+
+
+## V22 — Companies & Brands I've Supported
+Added a premium two-row logo section between the cinematic hero and Selected Work.
+
+Design:
+- Two slow-moving logo ribbons in opposite directions
+- Dark premium cards so different logo styles feel consistent
+- Hover pauses the row and subtly highlights the brand
+- Mobile-friendly sizing
+- Reduced-motion fallback
+- Wording intentionally says `Companies & Brands I've Supported` rather than implying every brand was a full case-study client
+
+Logo assets included under:
+`work/assets/supported-brands/`
