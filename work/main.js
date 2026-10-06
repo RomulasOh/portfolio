@@ -1,4 +1,48 @@
 (() => {
+
+  // Robust hero-video playback for GitHub Pages.
+  const video = document.querySelector('.hero-video');
+  const hero = document.querySelector('.hero');
+
+  if (video && hero) {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    const markReady = () => hero.classList.add('video-ready');
+
+    video.addEventListener('loadeddata', markReady, { once: true });
+    video.addEventListener('canplay', markReady, { once: true });
+    video.addEventListener('playing', markReady, { once: true });
+
+    const tryPlay = () => {
+      try {
+        video.load();
+        const p = video.play();
+        if (p && typeof p.catch === 'function') {
+          p.catch(() => {
+            // Some browsers need one user interaction even for muted autoplay.
+            const resume = () => {
+              video.play().then(markReady).catch(() => {});
+              window.removeEventListener('pointerdown', resume);
+              window.removeEventListener('keydown', resume);
+            };
+            window.addEventListener('pointerdown', resume, { once: true });
+            window.addEventListener('keydown', resume, { once: true });
+          });
+        }
+      } catch (_) {}
+    };
+
+    tryPlay();
+
+    // Retry once after GitHub Pages/cache has had time to return the MP4.
+    setTimeout(() => {
+      if (video.readyState < 2) tryPlay();
+    }, 1800);
+  }
+
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.mobile-menu');
 
@@ -16,11 +60,6 @@
   menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
   addEventListener('keydown', e => { if(e.key === 'Escape') setMenu(false); });
   addEventListener('resize', () => { if(innerWidth > 1050) setMenu(false); }, {passive:true});
-
-  // Optional local video: page still works cleanly if the MP4 has not been supplied yet.
-  const video = document.querySelector('.hero-video');
-  video?.addEventListener('error', () => video.classList.add('video-error'));
-  video?.querySelector('source')?.addEventListener('error', () => video.classList.add('video-error'));
 
   // Character-stagger hero title.
   document.querySelectorAll('[data-stagger]').forEach((line, lineIndex) => {

@@ -187,3 +187,31 @@ footer{padding:25px 0;background:#010101;border-top:1px solid var(--line)}
   .approach-steps article{grid-template-columns:40px 1fr}.approach-steps p{grid-column:2}
   .footer-inner{flex-direction:column;gap:10px}
 }
+
+
+/* ===== V18 VIDEO PLAYBACK FIX ===== */
+.hero-media{z-index:0}
+.poster{
+  z-index:0;
+  opacity:1;
+  transition:opacity .8s ease;
+}
+.hero-video{
+  z-index:1;
+  display:block !important;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  opacity:0;
+  filter:brightness(.92) contrast(1.04) saturate(1.08);
+  transition:opacity .9s ease;
+  background:#010101;
+}
+.hero.video-ready .hero-video{opacity:.94}
+.hero.video-ready .poster{opacity:0}
+.hero-shade{z-index:2;pointer-events:none}
+.hero-content,.hero-footer{z-index:10}
+
+/* Do not permanently hide the video after a temporary loading error. */
+.hero-video.video-error{display:block !important}

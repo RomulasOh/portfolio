@@ -25,3 +25,11 @@ The page already includes a designed fallback background, so it works even befor
 - Removed the audio track for a lighter website asset.
 - MP4 is H.264 + fast-start optimized for browser playback.
 - Existing static poster remains as the fallback.
+
+
+## V18 — video playback fix
+- Switched the hero video to a direct `src` attribute.
+- Added explicit muted autoplay + `video.play()` handling.
+- Added a retry for GitHub Pages/cache delays.
+- Video is layered above the SVG fallback and fades in only when actually ready.
+- Added `video-test.html` so the MP4 can be tested directly after deployment.

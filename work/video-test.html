@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio Hero Video Test</title>
+<style>
+html,body{margin:0;background:#000;color:#fff;font-family:Arial,sans-serif}
+video{display:block;width:100vw;height:100vh;object-fit:contain;background:#000}
+.status{position:fixed;left:16px;top:16px;z-index:2;background:rgba(0,0,0,.7);padding:10px 12px;border-radius:8px}
+</style></head>
+<body>
+<div class="status" id="s">Loading video…</div>
+<video id="v" src="./assets/portfolio-hero.mp4" autoplay muted loop playsinline controls></video>
+<script>
+const v=document.getElementById('v'),s=document.getElementById('s');
+v.addEventListener('loadeddata',()=>s.textContent='Video loaded ✓');
+v.addEventListener('error',()=>s.textContent='Video failed to load');
+v.play().catch(()=>s.textContent='Tap play to start');
+</script>
+</body></html>
