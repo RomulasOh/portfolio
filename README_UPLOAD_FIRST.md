@@ -92,3 +92,12 @@ Additional page folder:
 ## V19
 - Portfolio `/work/` upgraded with cinematic entrance choreography, staggered mobile menu, parallax and smoother section reveals.
 - Existing hero MP4 retained.
+
+
+## V23 — mobile navigation fixes
+- Home: added missing phone hamburger navigation.
+- Home: mobile menu contains Home, Digital Solutions, Muay Thai, Portfolio, About and Let's Build.
+- Digital Solutions: fixed mobile menu/overlay being permanently visible.
+- Digital Solutions: hidden state is now enforced with `[hidden]{display:none!important}`.
+- Both menu scripts explicitly reset to closed state.
+- JavaScript syntax validation passed.

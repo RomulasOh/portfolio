@@ -10,13 +10,19 @@
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     overlay.hidden = !open;
     menu.hidden = !open;
+    menu.setAttribute('aria-hidden', String(!open));
     document.body.classList.toggle('menu-open', open);
   }
+
+  // Always start closed, including after mobile browser back/forward cache.
+  setMenu(false);
+
   burger?.addEventListener('click',()=>setMenu(burger.getAttribute('aria-expanded')!=='true'));
   overlay?.addEventListener('click',()=>setMenu(false));
   menuLinks.forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
   addEventListener('resize',()=>{if(innerWidth>720)setMenu(false)},{passive:true});
+  addEventListener('pageshow',()=>setMenu(false));
 
   // Subtle binary/data stream over hero
   const binary = document.getElementById('binary-overlay');

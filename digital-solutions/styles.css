@@ -324,3 +324,20 @@ button{font:inherit}
   .builds-head{display:block}.builds-head .code-link{margin-top:22px}
   .build-line{grid-template-columns:1fr;padding:20px;gap:9px}
 }
+
+
+/* ============================================================
+   V23 — DIGITAL SOLUTIONS MOBILE MENU VISIBILITY FIX
+   ============================================================ */
+
+/* Author CSS previously set display:block at mobile widths, which could
+   override the HTML hidden state. These rules make hidden authoritative. */
+.mobile-overlay[hidden],
+.mobile-menu[hidden]{
+  display:none!important;
+}
+
+@media(max-width:720px){
+  .mobile-overlay:not([hidden]){display:block}
+  .mobile-menu:not([hidden]){display:block}
+}

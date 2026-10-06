@@ -1,4 +1,35 @@
 (() => {
+
+  // V23 — Home mobile navigation.
+  const homeMenuToggle = document.querySelector('.home-menu-toggle');
+  const homeMenu = document.querySelector('.home-mobile-menu');
+  const homeBackdrop = document.querySelector('.home-mobile-backdrop');
+
+  function setHomeMenu(open){
+    if(!homeMenuToggle || !homeMenu || !homeBackdrop) return;
+    homeMenuToggle.setAttribute('aria-expanded', String(open));
+    homeMenuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    homeMenu.hidden = !open;
+    homeMenu.setAttribute('aria-hidden', String(!open));
+    homeBackdrop.hidden = !open;
+    document.body.classList.toggle('home-menu-open', open);
+  }
+
+  setHomeMenu(false);
+  homeMenuToggle?.addEventListener('click', () => {
+    setHomeMenu(homeMenuToggle.getAttribute('aria-expanded') !== 'true');
+  });
+  homeBackdrop?.addEventListener('click', () => setHomeMenu(false));
+  homeMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setHomeMenu(false));
+  });
+  addEventListener('keydown', e => {
+    if(e.key === 'Escape') setHomeMenu(false);
+  });
+  addEventListener('resize', () => {
+    if(innerWidth > 900) setHomeMenu(false);
+  }, {passive:true});
+
   const reveal = document.getElementById('reveal-image');
   const desktop = window.matchMedia('(min-width: 901px)');
   const pattern = document.getElementById('hero-grid-pattern');
