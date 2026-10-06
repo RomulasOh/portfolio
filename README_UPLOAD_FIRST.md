@@ -70,3 +70,9 @@ Additional page folder:
 - Kept the Muay Thai hero photo/layout unchanged.
 - Removed the personal portrait from `/about/`.
 - Added a new abstract non-person About hero visual.
+
+
+## V12 update
+- Muay Thai hero typography updated to match the reference more closely.
+- White headline switched to a condensed poster-style display.
+- Pink BOXING headline updated with a handwritten brush feel and cleaner spacing.
