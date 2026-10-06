@@ -36,3 +36,22 @@ Bottom labels:
 - `MUAY THAI &` now stays on one row on desktop.
 - Removed the two pink decorative lines around `BOXING`.
 - Kept the hero photo and the rest of the page unchanged.
+
+## V20 — Real-drink inspired cyberpunk pricing carousel
+The previous four pricing cards were replaced with an interactive carousel inspired by the real-drink feature.
+
+Supplied images:
+- `Trial.png` → 1 Class Trial — $50
+- `Single-class.png` → 1 Class — $120
+- `Ten-pack.png` → 10 Classes Pack — $950
+- `twenty-pack.png` → 20 Classes Pack — $1800
+
+Interaction:
+- Previous / next arrows
+- Package tabs
+- Large changing background word
+- Active center fighter + previous/next side previews
+- Price/title/description/WhatsApp CTA change together
+- Cyberpunk pink/blue glow shifts per package
+- Mobile swipe support
+- Keyboard left/right support
