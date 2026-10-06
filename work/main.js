@@ -1,9 +1,9 @@
 (() => {
-
-  // Robust hero-video playback for GitHub Pages.
   const video = document.querySelector('.hero-video');
   const hero = document.querySelector('.hero');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Robust GitHub Pages video playback.
   if (video && hero) {
     video.muted = true;
     video.defaultMuted = true;
@@ -11,7 +11,6 @@
     video.playsInline = true;
 
     const markReady = () => hero.classList.add('video-ready');
-
     video.addEventListener('loadeddata', markReady, { once: true });
     video.addEventListener('canplay', markReady, { once: true });
     video.addEventListener('playing', markReady, { once: true });
@@ -22,7 +21,6 @@
         const p = video.play();
         if (p && typeof p.catch === 'function') {
           p.catch(() => {
-            // Some browsers need one user interaction even for muted autoplay.
             const resume = () => {
               video.play().then(markReady).catch(() => {});
               window.removeEventListener('pointerdown', resume);
@@ -36,23 +34,29 @@
     };
 
     tryPlay();
-
-    // Retry once after GitHub Pages/cache has had time to return the MP4.
-    setTimeout(() => {
-      if (video.readyState < 2) tryPlay();
-    }, 1800);
+    setTimeout(() => { if (video.readyState < 2) tryPlay(); }, 1800);
   }
 
+  // Animated mobile menu, including staggered links and delayed hide on exit.
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.mobile-menu');
+  let menuTimer;
 
   function setMenu(open){
     if(!toggle || !menu) return;
+    clearTimeout(menuTimer);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    menu.hidden = !open;
     menu.setAttribute('aria-hidden', String(!open));
     document.body.classList.toggle('menu-open', open);
+
+    if(open){
+      menu.hidden = false;
+      requestAnimationFrame(() => menu.classList.add('is-open'));
+    }else{
+      menu.classList.remove('is-open');
+      menuTimer = setTimeout(() => { menu.hidden = true; }, reduceMotion ? 0 : 320);
+    }
   }
 
   setMenu(false);
@@ -61,7 +65,7 @@
   addEventListener('keydown', e => { if(e.key === 'Escape') setMenu(false); });
   addEventListener('resize', () => { if(innerWidth > 1050) setMenu(false); }, {passive:true});
 
-  // Character-stagger hero title.
+  // Build the hero title as individual characters with deliberate sequence timings.
   document.querySelectorAll('[data-stagger]').forEach((line, lineIndex) => {
     const text = line.dataset.stagger || '';
     line.innerHTML = '';
@@ -69,17 +73,46 @@
       const span = document.createElement('span');
       span.className = 'char';
       span.textContent = ch === ' ' ? '\u00A0' : ch;
-      span.style.transitionDelay = `${lineIndex * 240 + index * 55}ms`;
+      const base = lineIndex === 0 ? 430 : 1080;
+      span.style.transitionDelay = `${base + index * 70}ms`;
       line.appendChild(span);
     });
   });
 
+  // Start hero choreography only after first paint.
   requestAnimationFrame(() => {
-    document.querySelectorAll('.stagger-line').forEach(line => line.classList.add('show'));
+    requestAnimationFrame(() => hero?.classList.add('hero-enter'));
   });
 
+  // Subtle desktop pointer parallax after the main sequence has settled.
+  if(hero && !reduceMotion && matchMedia('(hover:hover) and (pointer:fine)').matches){
+    let raf = 0;
+    const updateParallax = (e) => {
+      const r = hero.getBoundingClientRect();
+      const nx = ((e.clientX - r.left) / r.width - .5) * 2;
+      const ny = ((e.clientY - r.top) / r.height - .5) * 2;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        hero.style.setProperty('--parallax-x', `${nx * -8}px`);
+        hero.style.setProperty('--parallax-y', `${ny * -5}px`);
+        hero.style.setProperty('--copy-x', `${nx * 3}px`);
+        hero.style.setProperty('--copy-y', `${ny * 2}px`);
+      });
+    };
+    hero.addEventListener('pointermove', updateParallax, {passive:true});
+    hero.addEventListener('pointerleave', () => {
+      hero.style.setProperty('--parallax-x','0px');
+      hero.style.setProperty('--parallax-y','0px');
+      hero.style.setProperty('--copy-x','0px');
+      hero.style.setProperty('--copy-y','0px');
+    });
+  }
+
+  // Scroll-triggered reveals for the case studies below the hero.
   const reveals = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
+  if(reduceMotion || !('IntersectionObserver' in window)){
+    reveals.forEach(el => el.classList.add('visible'));
+  } else {
     const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -87,9 +120,7 @@
           io.unobserve(entry.target);
         }
       });
-    }, {threshold:.1});
+    }, {threshold:.12, rootMargin:'0px 0px -5% 0px'});
     reveals.forEach(el => io.observe(el));
-  } else {
-    reveals.forEach(el => el.classList.add('visible'));
   }
 })();

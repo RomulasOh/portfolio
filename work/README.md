@@ -33,3 +33,14 @@ The page already includes a designed fallback background, so it works even befor
 - Added a retry for GitHub Pages/cache delays.
 - Video is layered above the SVG fallback and fades in only when actually ready.
 - Added `video-test.html` so the MP4 can be tested directly after deployment.
+
+## V19 — interaction upgrade
+- Added a deliberate cinematic hero entrance sequence.
+- Headline now reveals character-by-character with two staged lines.
+- Subtitle enters after the title and the CTA appears after the subtitle.
+- Bottom category labels enter last.
+- Added animated glass mobile-menu open/close with staggered links.
+- Added subtle desktop pointer parallax to the hero video/depth layers.
+- Improved below-the-fold scroll reveals and project hover motion.
+- Added reduced-motion support for accessibility.
+- Kept the existing static HTML/CSS/JS architecture; no React build step is required.

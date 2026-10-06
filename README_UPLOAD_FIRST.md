@@ -88,3 +88,7 @@ Additional page folder:
 ## V17
 - Portfolio hero video installed at `/work/assets/portfolio-hero.mp4`.
 - Video web-optimized and audio removed.
+
+## V19
+- Portfolio `/work/` upgraded with cinematic entrance choreography, staggered mobile menu, parallax and smoother section reveals.
+- Existing hero MP4 retained.

@@ -215,3 +215,118 @@ footer{padding:25px 0;background:#010101;border-top:1px solid var(--line)}
 
 /* Do not permanently hide the video after a temporary loading error. */
 .hero-video.video-error{display:block !important}
+
+
+/* ===== V19 CINEMATIC INTERACTION UPGRADE ===== */
+.hero{
+  --parallax-x:0px;
+  --parallax-y:0px;
+  --copy-x:0px;
+  --copy-y:0px;
+}
+.hero-media{
+  transform:translate3d(var(--parallax-x),var(--parallax-y),0) scale(1.025);
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
+  will-change:transform;
+}
+.hero-content{
+  transform:translate3d(var(--copy-x),var(--copy-y),0);
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
+  will-change:transform;
+}
+.hero-depth{
+  position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;opacity:.42
+}
+.hero-depth i{
+  position:absolute;border:1px solid rgba(255,255,255,.055);border-radius:50%;
+  transform:translate3d(calc(var(--parallax-x) * -.45),calc(var(--parallax-y) * -.45),0);
+  transition:transform .45s cubic-bezier(.22,1,.36,1)
+}
+.hero-depth i:nth-child(1){width:420px;height:420px;right:8vw;top:16vh}
+.hero-depth i:nth-child(2){width:260px;height:260px;right:13vw;top:25vh}
+.hero-depth i:nth-child(3){width:10px;height:10px;right:27vw;top:31vh;background:rgba(216,242,244,.22);box-shadow:0 0 35px rgba(216,242,244,.3)}
+
+/* Hero choreography: each element owns its timing rather than the scroll reveal system. */
+.hero-sequence{
+  opacity:0;
+  transform:translateY(18px);
+  filter:blur(5px);
+  transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1),filter .8s ease;
+}
+.hero.hero-enter .hero-sequence{opacity:1;transform:none;filter:blur(0)}
+.hero.hero-enter .hero-sequence--kicker{transition-delay:.18s}
+.hero.hero-enter .hero-sequence--sub{transition-delay:1.72s}
+.hero.hero-enter .hero-sequence--cta{transition-delay:2.12s}
+.hero.hero-enter .hero-sequence--footer{transition-delay:2.48s}
+
+/* Headline uses a true staged character entrance. */
+.stagger-line .char{
+  opacity:0;
+  transform:translateY(18px);
+  filter:blur(8px);
+  transition-property:opacity,transform,filter;
+  transition-duration:.72s;
+  transition-timing-function:cubic-bezier(.22,1,.36,1);
+}
+.hero.hero-enter .stagger-line .char{opacity:1;transform:none;filter:blur(0)}
+
+/* Slightly richer liquid-glass response without changing the design language. */
+.hero-cta,.nav-cta,.menu-toggle{transition:background .3s ease,box-shadow .3s ease,transform .3s ease}
+.hero-cta:hover,.nav-cta:hover{transform:translateY(-2px)}
+
+/* Animated mobile glass panel + staggered links. */
+.mobile-menu{
+  display:flex;
+  visibility:hidden;
+  opacity:0;
+  transform:translateY(-10px) scale(.985);
+  transition:opacity .3s ease,transform .3s ease,visibility 0s linear .3s;
+}
+.mobile-menu[hidden]{display:flex!important;pointer-events:none}
+.mobile-menu.is-open{
+  visibility:visible;
+  opacity:1;
+  transform:translateY(0) scale(1);
+  transition-delay:0s;
+  pointer-events:auto;
+}
+.mobile-menu a{
+  opacity:0;
+  transform:translateY(-8px);
+  transition:opacity .35s ease,transform .35s cubic-bezier(.22,1,.36,1),color .3s ease;
+}
+.mobile-menu.is-open a{opacity:1;transform:none}
+.mobile-menu.is-open a:nth-child(1){transition-delay:.05s}
+.mobile-menu.is-open a:nth-child(2){transition-delay:.11s}
+.mobile-menu.is-open a:nth-child(3){transition-delay:.17s}
+.mobile-menu.is-open a:nth-child(4){transition-delay:.23s}
+.mobile-menu.is-open a:nth-child(5){transition-delay:.29s}
+.mobile-menu.is-open a:nth-child(6){transition-delay:.35s}
+
+/* Page sections get a calmer premium reveal. */
+.reveal{
+  opacity:0;
+  transform:translateY(32px);
+  filter:blur(7px);
+  transition:opacity .9s ease,transform .95s cubic-bezier(.22,1,.36,1),filter .9s ease
+}
+.reveal.visible{opacity:1;transform:none;filter:blur(0)}
+.project.reveal:nth-child(even){transform:translateY(32px) translateX(16px)}
+.project.reveal:nth-child(even).visible{transform:none}
+.project.reveal:nth-child(odd){transform:translateY(32px) translateX(-16px)}
+.project.reveal:nth-child(odd).visible{transform:none}
+
+@media (hover:hover) and (pointer:fine){
+  .project-visual{transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .4s ease,box-shadow .4s ease}
+  .project:hover .project-visual{transform:translateY(-6px);border-color:rgba(216,242,244,.22);box-shadow:0 22px 60px rgba(0,0,0,.32)}
+}
+
+@media(max-width:1050px){
+  .hero-media,.hero-content,.hero-depth i{transform:none!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.001ms!important;transition-delay:0s!important}
+  .hero-sequence,.stagger-line .char,.reveal,.mobile-menu a{opacity:1!important;transform:none!important;filter:none!important}
+  .mobile-menu{transform:none!important}
+}
