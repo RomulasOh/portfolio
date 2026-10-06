@@ -23,3 +23,9 @@ Bottom labels:
 - Technique — Muay Thai & Boxing Fundamentals
 - Fitness & Conditioning — Strength • Endurance
 - Confidence & Discipline — Focus • Consistency
+
+
+## V12 update
+- Muay Thai hero typography updated to match the reference more closely.
+- White headline switched to a condensed poster-style display.
+- Pink BOXING headline updated with a handwritten brush feel and cleaner spacing.
