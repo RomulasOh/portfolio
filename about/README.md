@@ -11,3 +11,9 @@ Includes:
 - How I Work section
 - What I Do section
 - WhatsApp CTA
+
+
+## V2 visual update
+- Removed the personal portrait from the About hero.
+- Replaced it with an original abstract multi-discipline / digital-systems visual.
+- No face or person is used in the About hero.

@@ -63,3 +63,10 @@ Additional page folder:
 - Removed the meaningless anonymous/pixel face panel and replaced it with a real training-photo panel using the supplied Muay Thai image.
 - Added `/about/` using the uploaded grid/node design idea, adapted to ROMULAS.
 - Updated About navigation links to `/about/`.
+
+
+## V11
+- Fixed `BOXING` hero lettering so each letter has clear spacing.
+- Kept the Muay Thai hero photo/layout unchanged.
+- Removed the personal portrait from `/about/`.
+- Added a new abstract non-person About hero visual.
