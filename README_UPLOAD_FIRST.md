@@ -83,3 +83,8 @@ Additional page folder:
 - Fixed Custom Systems & PWA long-form content not appearing (JavaScript syntax/reveal issue).
 - Added fail-safe reveal CSS so content remains visible if JavaScript fails.
 - Removed duplicate Muay Thai pricing notice from the top of the Rates section; note remains once at the bottom.
+
+
+## V17
+- Portfolio hero video installed at `/work/assets/portfolio-hero.mp4`.
+- Video web-optimized and audio removed.

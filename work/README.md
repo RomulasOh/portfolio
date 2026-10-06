@@ -17,3 +17,11 @@ Generate the video using `VIDEO_PROMPT.txt` and save it as:
 `work/assets/portfolio-hero.mp4`
 
 The page already includes a designed fallback background, so it works even before the MP4 is added.
+
+
+## V17 hero video
+- Added the supplied cinematic technology video as the live Portfolio hero background.
+- Saved as `work/assets/portfolio-hero.mp4`.
+- Removed the audio track for a lighter website asset.
+- MP4 is H.264 + fast-start optimized for browser playback.
+- Existing static poster remains as the fallback.
