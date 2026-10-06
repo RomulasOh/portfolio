@@ -6,3 +6,19 @@
 @media(max-width:767px){.about-hero{min-height:780px}.node-system{display:none}.grid-layer{opacity:.6}.hero-title{top:138px;max-width:88%;font-size:clamp(42px,11vw,62px)}.bottom-row{flex-direction:column;align-items:flex-start;gap:18px}.about-card{display:none}.portrait-layer{background-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.76) 38%,rgba(0,0,0,.42) 62%,#000 100%),url('./assets/about-abstract-visual.png');background-position:67% center;background-size:cover}.section-intro,.final-grid{grid-template-columns:1fr;gap:28px}.section-intro>p{grid-column:1;grid-row:auto}.principles{grid-template-columns:1fr}.discipline{grid-template-columns:45px 1fr}.discipline small{grid-column:2;justify-self:start;padding-bottom:18px}.about-shell{width:min(100% - 28px,1200px)}}
 @media(max-width:520px){.wordmark{font-size:18px}.about-hero{min-height:740px}.portrait-layer{background-position:76% center}.about-section{padding:80px 0}.section-intro h2,.final-grid h2{font-size:43px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.anim,.reveal{opacity:1!important;transform:none!important}.connectors path{stroke-dashoffset:0}}
+
+
+/* ===== V15 ABOUT NAV FIX ===== */
+@media (min-width:1024px){
+  .nav-left{gap:34px}
+  .desktop-links{gap:27px}
+  .desktop-links a{white-space:nowrap}
+}
+@media (min-width:1024px) and (max-width:1280px){
+  .about-nav{padding-left:24px;padding-right:24px}
+  .nav-left{gap:24px}
+  .desktop-links{gap:18px}
+  .desktop-links a{font-size:11px}
+  .nav-right{font-size:11px;gap:8px}
+  .nav-right span:nth-child(2){margin-left:8px}
+}

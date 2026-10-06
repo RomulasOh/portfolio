@@ -1,0 +1,61 @@
+ROMULAS PORTFOLIO HERO VIDEO — GENERATION PROMPT
+
+Goal:
+Create a premium cinematic abstract background video for a personal portfolio focused on:
+- custom business systems / PWAs
+- websites
+- workflow automation
+- digital experiences
+
+IMPORTANT:
+Do NOT show people, faces, hands, laptops being typed on, generic office workers, robots, or literal code scrolling.
+Do NOT use obvious stock footage.
+No readable logos or brand names.
+The video should feel like a high-end technology studio showreel, not a sci-fi movie.
+
+VISUAL DIRECTION:
+A dark black environment with subtle architectural light.
+Floating translucent interface planes, abstract workflow nodes, soft glass panels, thin data lines and elegant system diagrams slowly moving in depth.
+Occasional soft white/cyan highlights and very subtle muted magenta reflections.
+Cinematic macro depth of field, volumetric haze, smooth parallax.
+The movement should be slow and controlled so white text can sit clearly over the center-left area.
+
+COMPOSITION:
+- 16:9 landscape
+- keep the LEFT 45% relatively dark and visually quiet for website headline text
+- richer movement can happen on the RIGHT 55%
+- center should not have a bright hotspot
+- no abrupt cuts
+
+MOTION:
+8–12 second seamless loop.
+Slow camera drift forward and slightly sideways.
+Interface planes move at different depths.
+A few nodes softly connect/disconnect.
+Very subtle particles.
+No fast zooms, no glitch explosions, no flashing.
+
+COLOR:
+#010101 black base
+smoky charcoal
+soft cool cyan / icy blue
+small amount of desaturated magenta
+overall low saturation and premium
+
+STYLE:
+Minimal, cinematic, sophisticated, editorial, premium digital studio.
+Think: abstract enterprise software + gallery installation + luxury technology campaign.
+
+OUTPUT:
+1920x1080 MP4
+24 or 30 fps
+8–12 seconds
+seamless loop if possible
+H.264
+no audio
+
+File name:
+portfolio-hero.mp4
+
+After generating, send/upload the MP4 and I can drop it into:
+work/assets/portfolio-hero.mp4

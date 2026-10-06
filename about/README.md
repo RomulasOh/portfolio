@@ -17,3 +17,15 @@ Includes:
 - Removed the personal portrait from the About hero.
 - Replaced it with an original abstract multi-discipline / digital-systems visual.
 - No face or person is used in the About hero.
+
+
+## V15 navigation fix
+- Added the missing `PORTFOLIO` item to the desktop About-page menu.
+- Desktop order is now:
+  01. HOME
+  02. DIGITAL_SOLUTIONS
+  03. MUAY_THAI
+  04. PORTFOLIO
+  05. ABOUT
+- Mobile menu already contained Portfolio and remains unchanged.
+- Tightened desktop spacing so all five items fit cleanly.
