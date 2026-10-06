@@ -76,3 +76,10 @@ Additional page folder:
 - Muay Thai hero typography updated to match the reference more closely.
 - White headline switched to a condensed poster-style display.
 - Pink BOXING headline updated with a handwritten brush feel and cleaner spacing.
+
+
+## V14 fixes
+- Fixed Digital Marketing long-form content not appearing (JavaScript syntax/reveal issue).
+- Fixed Custom Systems & PWA long-form content not appearing (JavaScript syntax/reveal issue).
+- Added fail-safe reveal CSS so content remains visible if JavaScript fails.
+- Removed duplicate Muay Thai pricing notice from the top of the Rates section; note remains once at the bottom.

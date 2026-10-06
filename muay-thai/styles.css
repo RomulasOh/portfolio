@@ -215,3 +215,7 @@ footer{padding:24px 0;border-top:1px solid var(--line);background:#050509}.foote
     font-size:clamp(58px,15.5vw,90px);
   }
 }
+
+/* V14 pricing heading: duplicate note removed; heading spans available width. */
+.rates .section-heading{grid-template-columns:1fr;margin-bottom:44px}
+.rates .section-heading>div{max-width:760px}
