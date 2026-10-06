@@ -29,3 +29,10 @@ Bottom labels:
 - Muay Thai hero typography updated to match the reference more closely.
 - White headline switched to a condensed poster-style display.
 - Pink BOXING headline updated with a handwritten brush feel and cleaner spacing.
+
+
+## V13 hero fix
+- Hero copy moved farther left on desktop.
+- `MUAY THAI &` now stays on one row on desktop.
+- Removed the two pink decorative lines around `BOXING`.
+- Kept the hero photo and the rest of the page unchanged.

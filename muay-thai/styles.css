@@ -125,3 +125,93 @@ footer{padding:24px 0;border-top:1px solid var(--line);background:#050509}.foote
   .hero-brush{font-size:clamp(58px,15.5vw,92px);letter-spacing:.025em;margin-top:6px}
   .hero-tagline{letter-spacing:.22em}
 }
+
+
+/* ===== V13 HERO POSITION + TYPOGRAPHY FIX ===== */
+
+/* Move the entire hero copy farther left while keeping the background photo unchanged. */
+.hero-stage{
+  width:min(1480px, calc(100% - 28px));
+  margin-inline:auto;
+  padding-left:0;
+  padding-right:0;
+}
+.hero-copy{
+  max-width:760px;
+  margin-left:-48px;
+}
+
+/* Keep MUAY THAI & on one row like the reference. */
+.hero-copy h1.hero-title{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  margin:0 0 18px;
+  gap:4px;
+}
+.hero-white{
+  display:block;
+  white-space:nowrap;
+  font-family:var(--hero-title-font);
+  font-size:clamp(82px,6.35vw,118px);
+  line-height:.86;
+  letter-spacing:.005em;
+  font-weight:400;
+}
+
+/* BOXING: word only — remove the two decorative pink lines. */
+.hero-brush{
+  display:block;
+  width:max-content;
+  margin-top:5px;
+  padding:0;
+  font-family:var(--hero-brush-font);
+  font-size:clamp(78px,6.6vw,122px);
+  line-height:.86;
+  letter-spacing:.035em;
+  color:var(--pink);
+  transform:skewX(-8deg);
+  transform-origin:left center;
+  text-shadow:0 0 24px rgba(255,47,146,.18);
+}
+.hero-brush::before,
+.hero-brush::after{
+  content:none !important;
+  display:none !important;
+}
+
+@media (min-width:1400px){
+  .hero-copy{margin-left:-78px}
+  .hero-white{font-size:clamp(88px,6.45vw,124px)}
+  .hero-brush{font-size:clamp(82px,6.7vw,128px)}
+}
+
+@media (max-width:1180px){
+  .hero-copy{margin-left:0}
+  .hero-white{font-size:clamp(72px,7.6vw,98px)}
+  .hero-brush{font-size:clamp(70px,7.5vw,100px)}
+}
+
+@media (max-width:980px){
+  .hero-stage{
+    width:min(100% - 34px, 1320px);
+  }
+  .hero-copy{
+    margin-left:0;
+    max-width:680px;
+  }
+  .hero-white{
+    white-space:normal;
+    font-size:clamp(62px,10.5vw,88px);
+  }
+}
+
+@media (max-width:640px){
+  .hero-white{
+    white-space:normal;
+    font-size:clamp(50px,13.7vw,76px);
+  }
+  .hero-brush{
+    font-size:clamp(58px,15.5vw,90px);
+  }
+}
