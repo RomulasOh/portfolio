@@ -231,3 +231,39 @@
     object-position:68% 14% !important;
   }
 }
+
+
+/* ============================================================
+   V26 — HOME HERO RIGHT-ANCHORED IMAGE STRATEGY
+   Start both hero portraits from the RIGHT edge so we do not
+   need to keep micro-adjusting percentage positions.
+   ============================================================ */
+
+.desktop-hero .hero-image,
+.desktop-hero .base-image,
+.desktop-hero .reveal-image{
+  background-repeat:no-repeat !important;
+  background-position:right center !important;
+  background-size:auto 114% !important;
+}
+
+.hero:after{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(246,246,243,.98) 0%,
+      rgba(246,246,243,.90) 27%,
+      rgba(246,246,243,.58) 42%,
+      rgba(246,246,243,.16) 56%,
+      rgba(246,246,243,0) 70%
+    ) !important;
+}
+
+@media(max-width:900px){
+  .hero-mobile-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:right center !important;
+  }
+}

@@ -101,3 +101,26 @@ Additional page folder:
 - Digital Solutions: hidden state is now enforced with `[hidden]{display:none!important}`.
 - Both menu scripts explicitly reset to closed state.
 - JavaScript syntax validation passed.
+
+
+## V24 — Home hero portrait crop
+- Replaced the Home hero's old full-body professional image with the supplied close-up professional portrait.
+- Replaced the desktop cursor-reveal Muay Thai image with the supplied close-up Muay Thai portrait.
+- Hero now focuses mainly on the face/upper body while retaining the left-side space for the headline.
+- Mobile Home hero uses the professional close-up portrait.
+- The lower Muay Thai section was left unchanged.
+
+
+## V25 — Home hero matched-image reveal
+- Uses the new formal portrait and new Muay Thai portrait.
+- Both source images are exactly `1122 × 1402`.
+- Both desktop layers use the exact same CSS `background-size` and `background-position`.
+- This removes the weird zoom/jump when the cursor reveal changes between them.
+- Portrait is shifted farther right to leave more space for the headline.
+- Mobile Home hero uses the formal portrait.
+
+## V26 — Home hero right-anchored portraits
+- Both desktop hero images now start from the right edge using `background-position: right center`.
+- Both images keep the same `background-size: auto 114%`.
+- Mobile hero also uses right-aligned image positioning.
+- This removes repeated percentage-position tuning between the formal and Muay Thai portraits.
