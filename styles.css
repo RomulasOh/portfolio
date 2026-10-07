@@ -267,3 +267,368 @@
     object-position:right center !important;
   }
 }
+
+
+/* ============================================================
+   V28 — HOME PINNED SCROLL STORY
+   Replaces the old static BUILD SYSTEMS / BUILD PEOPLE section.
+   ============================================================ */
+
+.mindset-story{
+  position:relative;
+  height:390vh;
+  background:#0a121b;
+  color:#fff;
+}
+
+.mindset-sticky{
+  position:sticky;
+  top:0;
+  height:100svh;
+  min-height:680px;
+  overflow:hidden;
+  background:#0a121b;
+}
+
+.mindset-bg{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  background:#0a121b;
+}
+
+.mindset-image{
+  position:absolute;
+  inset:0;
+  background-image:url('./images/home-scroll-discipline-v28.webp');
+  background-size:cover;
+  background-position:center right;
+  background-repeat:no-repeat;
+  transform:scale(1.02);
+  filter:saturate(.88) contrast(1.04) brightness(.82);
+  transition:filter .45s ease;
+}
+
+/* Dark left field keeps copy readable; image remains strong on right. */
+.mindset-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(8,17,27,.98) 0%,
+      rgba(8,17,27,.96) 30%,
+      rgba(8,17,27,.72) 45%,
+      rgba(8,17,27,.22) 63%,
+      rgba(8,17,27,.06) 78%,
+      rgba(8,17,27,.10) 100%),
+    linear-gradient(180deg,rgba(4,9,15,.16),rgba(4,9,15,.08) 65%,rgba(4,9,15,.28));
+  z-index:2;
+  pointer-events:none;
+}
+
+.mindset-tech{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  pointer-events:none;
+}
+
+.mindset-tech-grid{
+  opacity:0;
+  background:
+    linear-gradient(rgba(207,225,235,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(207,225,235,.055) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(90deg,transparent 0,#000 48%,#000 100%);
+  transition:opacity .45s ease;
+}
+
+.mindset-tech-lines{
+  opacity:0;
+  transition:opacity .45s ease;
+}
+
+.mindset-tech-lines span{
+  position:absolute;
+  height:1px;
+  transform-origin:left center;
+  background:linear-gradient(90deg,transparent,rgba(219,235,242,.55),transparent);
+  box-shadow:0 0 10px rgba(219,235,242,.12);
+}
+
+.mindset-tech-lines span:nth-child(1){width:31%;left:51%;top:29%;transform:rotate(8deg)}
+.mindset-tech-lines span:nth-child(2){width:27%;left:56%;top:42%;transform:rotate(-11deg)}
+.mindset-tech-lines span:nth-child(3){width:25%;left:48%;top:57%;transform:rotate(14deg)}
+.mindset-tech-lines span:nth-child(4){width:22%;left:66%;top:67%;transform:rotate(-8deg)}
+.mindset-tech-lines span:nth-child(5){width:17%;left:71%;top:20%;transform:rotate(21deg)}
+
+.mindset-tech-ring{
+  inset:auto 4.5vw 7vh auto;
+  width:min(43vw,660px);
+  height:min(43vw,660px);
+  border-radius:50%;
+  border:1px solid rgba(203,224,235,.17);
+  opacity:0;
+  transform:scale(.84) rotate(-12deg);
+  transition:opacity .45s ease,transform .65s cubic-bezier(.22,1,.36,1);
+}
+
+.mindset-tech-ring::before,
+.mindset-tech-ring::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(203,224,235,.10);
+}
+
+.mindset-tech-ring::before{inset:14%}
+.mindset-tech-ring::after{inset:30%}
+
+.mindset-tech-pulse{
+  inset:auto 21vw 19vh auto;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#d2a138;
+  opacity:0;
+  box-shadow:
+    0 0 0 1px rgba(210,161,56,.6),
+    0 0 26px rgba(210,161,56,.65),
+    0 0 70px rgba(210,161,56,.2);
+  transition:opacity .35s ease;
+}
+
+.mindset-shell{
+  position:relative;
+  z-index:5;
+  height:100%;
+}
+
+.mindset-copy{
+  position:absolute;
+  left:0;
+  top:50%;
+  width:min(650px,52vw);
+  transform:translateY(-50%);
+}
+
+.mindset-step-no{
+  margin-bottom:24px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.32em;
+  color:#d2a138;
+}
+
+.mindset-copy h2{
+  margin:0;
+  font-family:'Archivo Black',sans-serif;
+  font-size:clamp(58px,7.5vw,118px);
+  line-height:.87;
+  letter-spacing:-.06em;
+  color:#fff;
+  transition:opacity .24s ease,transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+.mindset-copy h2 span{color:#d2a138}
+
+.mindset-copy p{
+  max-width:560px;
+  margin:28px 0 0;
+  color:#d9dee2;
+  font-size:16px;
+  line-height:1.72;
+  transition:opacity .24s ease,transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+.mindset-link{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin-top:29px;
+  padding-bottom:6px;
+  border-bottom:1px solid rgba(255,255,255,.48);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.14em;
+  color:#fff;
+}
+
+.mindset-link span{color:#d2a138}
+
+.mindset-story.is-changing .mindset-copy h2,
+.mindset-story.is-changing .mindset-copy p{
+  opacity:0;
+  transform:translateY(18px);
+}
+
+.mindset-rail{
+  position:absolute;
+  right:0;
+  bottom:46px;
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.mindset-tab{
+  appearance:none;
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  background:transparent;
+  color:#737e88;
+  padding:0 0 10px;
+  font-family:'DM Sans',sans-serif;
+  cursor:pointer;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  transition:color .25s ease,border-color .25s ease;
+}
+
+.mindset-tab span{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+
+.mindset-tab b{
+  font-size:9px;
+  letter-spacing:.14em;
+}
+
+.mindset-tab:hover,
+.mindset-tab.active{
+  color:#fff;
+  border-color:#d2a138;
+}
+
+.mindset-tab.active span{color:#d2a138}
+
+.mindset-scroll-note{
+  position:absolute;
+  left:0;
+  bottom:44px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:#9099a1;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.22em;
+}
+
+.mindset-scroll-line{
+  display:block;
+  width:52px;
+  height:1px;
+  background:rgba(255,255,255,.34);
+  overflow:hidden;
+  position:relative;
+}
+
+.mindset-scroll-line::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#d2a138;
+  transform-origin:left;
+  transform:scaleX(var(--mindset-progress,0));
+}
+
+/* Visual states follow the current story chapter. */
+.mindset-story[data-step="1"] .mindset-tech-grid{opacity:.9}
+.mindset-story[data-step="1"] .mindset-tech-lines{opacity:.65}
+
+.mindset-story[data-step="2"] .mindset-tech-grid{opacity:.38}
+.mindset-story[data-step="2"] .mindset-tech-lines{opacity:.3}
+.mindset-story[data-step="2"] .mindset-tech-ring{
+  opacity:.85;
+  transform:scale(1) rotate(0deg);
+}
+
+.mindset-story[data-step="3"] .mindset-tech-grid{opacity:.65}
+.mindset-story[data-step="3"] .mindset-tech-lines{opacity:.72}
+.mindset-story[data-step="3"] .mindset-tech-ring{
+  opacity:.92;
+  transform:scale(1.06) rotate(9deg);
+}
+.mindset-story[data-step="3"] .mindset-tech-pulse{opacity:1}
+.mindset-story[data-step="3"] .mindset-image{
+  filter:saturate(.98) contrast(1.07) brightness(.88);
+}
+
+@media(max-width:900px){
+  .mindset-story{height:auto}
+  .mindset-sticky{
+    position:relative;
+    min-height:920px;
+    height:auto;
+  }
+  .mindset-image{
+    background-position:68% top;
+    background-size:auto 65%;
+  }
+  .mindset-bg::after{
+    background:
+      linear-gradient(180deg,
+        rgba(8,17,27,.05) 0%,
+        rgba(8,17,27,.16) 38%,
+        rgba(8,17,27,.95) 62%,
+        rgba(8,17,27,1) 100%);
+  }
+  .mindset-shell{
+    min-height:920px;
+    padding-top:510px;
+    padding-bottom:125px;
+  }
+  .mindset-copy{
+    position:relative;
+    top:auto;
+    left:auto;
+    width:100%;
+    transform:none;
+  }
+  .mindset-copy h2{
+    font-size:clamp(54px,14vw,88px);
+  }
+  .mindset-copy p{
+    font-size:14px;
+  }
+  .mindset-rail{
+    left:0;
+    right:auto;
+    bottom:56px;
+    max-width:100%;
+    overflow-x:auto;
+    gap:18px;
+  }
+  .mindset-scroll-note{display:none}
+  .mindset-tech-ring{
+    width:360px;
+    height:360px;
+    right:-120px;
+    top:120px;
+    bottom:auto;
+  }
+  .mindset-tech-pulse{
+    right:70px;
+    top:250px;
+    bottom:auto;
+  }
+}
+
+@media(max-width:560px){
+  .mindset-sticky,
+  .mindset-shell{min-height:870px}
+  .mindset-shell{padding-top:465px}
+  .mindset-image{
+    background-size:auto 58%;
+    background-position:68% 0;
+  }
+  .mindset-copy h2{
+    font-size:clamp(48px,14.8vw,72px);
+  }
+  .mindset-tab b{display:none}
+}

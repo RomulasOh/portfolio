@@ -75,6 +75,108 @@
   addEventListener('mousemove', move, { passive: true });
   raf = requestAnimationFrame(frame);
 
+
+
+  // V28 — Home mindset pinned scroll story.
+  const mindsetStory = document.querySelector('.mindset-story');
+  if(mindsetStory){
+    const steps = [
+      {
+        no:'00 / FOUNDATION',
+        title:'Different disciplines.<br><span>Same foundation.</span>',
+        desc:'Understand the problem. Master the fundamentals. Build from something solid.'
+      },
+      {
+        no:'01 / BUILD SYSTEMS',
+        title:'Build systems<br><span>that remove friction.</span>',
+        desc:'Structure the workflow. Make the process clear. Automate what should not stay manual.'
+      },
+      {
+        no:'02 / BUILD PEOPLE',
+        title:'Build people<br><span>through discipline.</span>',
+        desc:'Technique. Repetition. Conditioning. Confidence. Progress comes from doing the fundamentals well.'
+      },
+      {
+        no:'03 / SAME MINDSET',
+        title:'Different work.<br><span>Same mindset.</span>',
+        desc:'Understand. Structure. Execute. Improve. The method stays consistent whether the goal is a better system or a stronger person.'
+      }
+    ];
+
+    const noEl = mindsetStory.querySelector('[data-mindset-no]');
+    const titleEl = mindsetStory.querySelector('[data-mindset-title]');
+    const descEl = mindsetStory.querySelector('[data-mindset-desc]');
+    const tabs = [...mindsetStory.querySelectorAll('[data-mindset-tab]')];
+    let current = -1;
+    let rafId = 0;
+
+    function setStep(step, animate=true){
+      step = Math.max(0, Math.min(steps.length - 1, step));
+      if(step === current) return;
+      current = step;
+
+      if(animate) mindsetStory.classList.add('is-changing');
+
+      setTimeout(() => {
+        const data = steps[step];
+        noEl.textContent = data.no;
+        titleEl.innerHTML = data.title;
+        descEl.textContent = data.desc;
+        mindsetStory.dataset.step = String(step);
+
+        tabs.forEach((tab, i) => {
+          tab.classList.toggle('active', i === step);
+          tab.setAttribute('aria-current', i === step ? 'step' : 'false');
+        });
+
+        mindsetStory.classList.remove('is-changing');
+      }, animate ? 150 : 0);
+    }
+
+    function updateMindsetStory(){
+      rafId = 0;
+
+      if(innerWidth <= 900){
+        setStep(3, false);
+        mindsetStory.style.setProperty('--mindset-progress','1');
+        return;
+      }
+
+      const rect = mindsetStory.getBoundingClientRect();
+      const scrollable = Math.max(1, mindsetStory.offsetHeight - innerHeight);
+      const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
+
+      mindsetStory.style.setProperty('--mindset-progress', String(progress));
+
+      const step = Math.min(3, Math.floor(progress * 4));
+      setStep(step, true);
+    }
+
+    function requestMindsetUpdate(){
+      if(!rafId) rafId = requestAnimationFrame(updateMindsetStory);
+    }
+
+    addEventListener('scroll', requestMindsetUpdate, {passive:true});
+    addEventListener('resize', requestMindsetUpdate, {passive:true});
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => {
+        if(innerWidth <= 900){
+          setStep(i, true);
+          return;
+        }
+        const storyTop = mindsetStory.getBoundingClientRect().top + scrollY;
+        const scrollable = Math.max(1, mindsetStory.offsetHeight - innerHeight);
+        const target = storyTop + scrollable * (i / 3);
+        scrollTo({top:target,behavior:'smooth'});
+      });
+    });
+
+    setStep(0, false);
+    updateMindsetStory();
+  }
+
+
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: .12 });

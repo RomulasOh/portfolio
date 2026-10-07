@@ -124,3 +124,26 @@ Additional page folder:
 - Both images keep the same `background-size: auto 114%`.
 - Mobile hero also uses right-aligned image positioning.
 - This removes repeated percentage-position tuning between the formal and Muay Thai portraits.
+
+
+## V28 — Home pinned scroll story
+Replaced the old static `BUILD SYSTEMS. BUILD PEOPLE.` section with a sticky, scroll-driven narrative.
+
+Desktop:
+- Section spans ~3.9 viewport heights.
+- Visual stays pinned while copy changes through 4 chapters.
+- System grid, workflow lines, circular training motif and final pulse reveal progressively.
+- Bottom progress rail can also be clicked to jump between chapters.
+
+Chapters:
+00 FOUNDATION
+01 BUILD SYSTEMS
+02 BUILD PEOPLE
+03 SAME MINDSET
+
+Visual:
+- Uses `images/home-scroll-discipline-v28.webp`, generated specifically for this section.
+- Subject is concentrated on the right and left side stays dark for copy.
+
+Mobile:
+- Falls back to a single static final chapter so it remains smooth and readable.

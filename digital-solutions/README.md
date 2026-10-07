@@ -12,3 +12,13 @@ Below the hero it now includes:
 - final CTA
 
 Upload by replacing the contents of `/digital-solutions/`.
+
+
+## V27 — Hero service navigation
+- Enlarged the four clickable hero service links.
+- Converted them into glass-style interactive cards.
+- Added larger numbers, clearer service names and `OPEN ↗` indicators.
+- Added visible hover/focus states so users immediately understand they are clickable.
+- Desktop: four cards in one row.
+- Tablet: two-by-two.
+- Phone: four full-width touch-friendly rows.
